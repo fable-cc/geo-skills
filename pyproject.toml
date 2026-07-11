@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geo-skills"
+version = "1.0.0"
+description = "GEO (Generative Engine Optimization) toolset — optimize articles for AI search engines"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "景一·寓言城堡"}
+]
+keywords = ["geo", "generative-engine-optimization", "ai-search", "content-optimization", "seo"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+    "Topic :: Text Processing :: Markup",
+]
+requires-python = ">=3.10"
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/fable-cc/geo-skills"
+Repository = "https://github.com/fable-cc/geo-skills"
+Issues = "https://github.com/fable-cc/geo-skills/issues"
+
+[project.scripts]
+geo-rewrite = "geo_rewrite:main"
+geo-audit = "geo_content_audit:main"
+geo-expand = "geo_keyword_expander:main"
+
+[tool.setuptools]
+py-modules = ["geo_rewrite", "geo_content_audit", "geo_keyword_expander"]

@@ -1,0 +1,18 @@
+name: GEO Skills CI
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install flake8
+      - run: flake8 *.py tests/*.py --max-line-length=120 --ignore=E501,W503
+      - run: python3 -c "import ast; [ast.parse(open(f).read()) for f in ['geo_rewrite.py','geo_content_audit.py','geo_keyword_expander.py','geo_flow.py','api_server.py','visualizer.py']]; print('All syntax OK')"

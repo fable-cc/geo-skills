@@ -1,9 +1,15 @@
 ---
-name: geo-rewrite
-description: "GEO 改写——把普通文章优化为 AI 搜索引擎友好版本，提升在 ChatGPT Search、Perplexity、DeepSeek、豆包、Kimi 等 AI 搜索引擎中的引用率和推荐率"
-version: 1.0.0
-author: 景一·寓言城堡
+AIGC:
+    Label: "1"
+    ContentProducer: 001191440300708461136T1XGW3
+    ProduceID: e9c4b8701811f7712ebc7921f987742f_2d2db99b7d0711f18d11525400e6dd8f
+    ReservedCode1: HXBGyuS1jt3cz1vQj+y/U//D2Uil6uT1oPCNGzR2RIplfG+wxOBmhUqYHXQX7aAoVsuqFcMHUEAyLpBnsB2H9SiIl1vLp/lCg0QQGS/je7xDnCM1UyGz8ty5zwVHaGJVy3rm2J6l4fTiM3mcWidM8HiYEygYv6mXfEAPTJBg5mP7WbN5u1+Ijha5g3g=
+    ContentPropagator: 001191440300708461136T1XGW3
+    PropagateID: e9c4b8701811f7712ebc7921f987742f_2d2db99b7d0711f18d11525400e6dd8f
+    ReservedCode2: HXBGyuS1jt3cz1vQj+y/U//D2Uil6uT1oPCNGzR2RIplfG+wxOBmhUqYHXQX7aAoVsuqFcMHUEAyLpBnsB2H9SiIl1vLp/lCg0QQGS/je7xDnCM1UyGz8ty5zwVHaGJVy3rm2J6l4fTiM3mcWidM8HiYEygYv6mXfEAPTJBg5mP7WbN5u1+Ijha5g3g=
 ---
+
+
 
 # GEO 改写
 
@@ -70,7 +76,7 @@ author: 景一·寓言城堡
 
 ## 配套工具
 
-`geo_rewrite.py`：本 Skill 的可执行实现，约 80 行 Python 标准库脚本。调用 OpenAI 兼容 API，将改写 prompt 内嵌为字符串常量，直接可用。
+`geo_rewrite.py`：本 Skill 的可执行实现，约 190 行 Python 标准库脚本。调用 OpenAI 兼容 API，将改写 prompt 内嵌为字符串常量，直接可用。
 
 用法：
 ```bash
@@ -93,3 +99,4 @@ python3 geo_rewrite.py --input 文章.md --dry-run
 > ### FAQ
 > **Q: 一定会导致胃癌吗？**
 > A: 不会。大多数人终身停留在慢性胃炎阶段。
+*（内容由AI生成，仅供参考）*

@@ -1,6 +1,21 @@
+---
+AIGC:
+    Label: "1"
+    ContentProducer: 001191440300708461136T1XGW3
+    ProduceID: e9c4b8701811f7712ebc7921f987742f_2be57a767d0711f1938f5254006c9bbf
+    ReservedCode1: 74UVTNDDpNHDGHIYbbs13C+VCmwV9Mrw8ZUAiHkO/rerARb0Ok/wpgcMZrcDENo/GhuSiTiWKKM1+5grThvWZB8XuyjmYSAy8LwujkyrUzCqN6D+TkU4bL02xxzD9eT3huCYy8OcExRDNs6EzuH/wfG75tKFRx8qDW7VnDK82nmXSzklOjJcCzV/VjM=
+    ContentPropagator: 001191440300708461136T1XGW3
+    PropagateID: e9c4b8701811f7712ebc7921f987742f_2be57a767d0711f1938f5254006c9bbf
+    ReservedCode2: 74UVTNDDpNHDGHIYbbs13C+VCmwV9Mrw8ZUAiHkO/rerARb0Ok/wpgcMZrcDENo/GhuSiTiWKKM1+5grThvWZB8XuyjmYSAy8LwujkyrUzCqN6D+TkU4bL02xxzD9eT3huCYy8OcExRDNs6EzuH/wfG75tKFRx8qDW7VnDK82nmXSzklOjJcCzV/VjM=
+---
+
 # 🛰️ GEO Skills
 
 > 让每一篇文章都被 AI 搜索引擎看见
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![CI](https://github.com/fable-cc/geo-skills/actions/workflows/test.yml/badge.svg)](https://github.com/fable-cc/geo-skills/actions/workflows/test.yml)
 
 ## 这是什么
 
@@ -14,10 +29,14 @@ GEO Skills 是景一·寓言城堡开源的 **生成式引擎优化（Generative
 
 复制 `geo-rewrite-prompt.md` 中的 prompt，粘贴给任何 LLM，把你的文章发过去——立刻得到 GEO 优化版。
 
-### 2. 使用命令行脚本
+### 2. 安装命令行工具
 
 ```bash
-# 安装依赖（零依赖，纯标准库）
+# 安装为系统命令（零依赖，纯标准库）
+pip install .
+# 安装后可全局调用: geo-rewrite / geo-audit / geo-expand
+
+# 或直接运行脚本
 # 设置 API key
 export OPENAI_API_KEY="sk-xxx"
 export LLM_MODEL="gpt-4o-mini"  # 可选，默认 gpt-4o-mini
@@ -30,6 +49,12 @@ python3 geo_rewrite.py --input 我的文章.md --platform zhihu
 
 # 只看 prompt，不调 API
 python3 geo_rewrite.py --input 我的文章.md --dry-run
+
+# 内容审计
+python3 geo_content_audit.py --input 我的文章.md
+
+# 关键词扩展
+python3 geo_keyword_expander.py --keywords "幽门螺杆菌,治疗" --output keywords.csv
 ```
 
 ### 3. 安装为 Hermes Skill
@@ -41,9 +66,14 @@ python3 geo_rewrite.py --input 我的文章.md --dry-run
 | 文件 | 用途 | 类型 |
 |------|------|------|
 | `geo-rewrite-prompt.md` | GEO 改写提示词模板（复制即用） | 文档 |
+| `geo-rewrite-prompt-en.md` | GEO 改写提示词英文版（ChatGPT Search / Perplexity / Gemini） | 文档 |
 | `geo-rewrite-skill.md` | Hermes Skill 定义（YAML + Markdown） | Skill 定义 |
 | `geo_rewrite.py` | 可执行 GEO 改写脚本（纯标准库） | 工具 |
+| `geo_content_audit.py` | 可执行内容 GEO 审计脚本（标注 + 评分卡） | 工具 |
+| `geo_keyword_expander.py` | 可执行关键词扩展脚本（长尾问题生成） | 工具 |
 | `geo-annotated-demo.md` | 单篇文章 GEO 特征标注演示（17 处） | 教程 |
+| `pyproject.toml` | 项目元数据 + entry points（geo-rewrite/geo-audit/geo-expand） | 配置 |
+| `CHANGELOG.md` | 版本变更日志 | 文档 |
 | `skills/geo-rewrite/` | GEO 改写 Skill 子包 | Skill |
 | `skills/geo-content-audit/` | 内容 GEO 审计 Skill 子包 | Skill |
 | `skills/geo-keyword-expander/` | 关键词扩展 Skill 子包 | Skill |
@@ -85,3 +115,55 @@ python3 geo_rewrite.py --input 我的文章.md --dry-run
 ## License
 
 MIT © 景一·寓言城堡
+
+---
+
+## English Resources
+
+For English-speaking users, see the [GEO Rewrite Prompt — English Edition](geo-rewrite-prompt-en.md), covering ChatGPT Search, Perplexity, Gemini, and platform-specific rules for Quora, Reddit, Substack, Medium, Google Discover, Instagram, and Pinterest.
+*（内容由AI生成，仅供参考）*
+
+---
+
+## Shell 自动补全
+
+为 `geo-rewrite`、`geo-audit`、`geo-expand`、`geo-flow` 四个 CLI 命令提供 Tab 补全支持（覆盖所有参数，`--platform` 候选值为 `zhihu/wechat/baijiahao/xiaohongshu`）。
+
+### Bash
+
+```bash
+# 临时生效（当前会话）
+source completions/geo-rewrite.bash
+
+# 持久化
+echo "source $(pwd)/completions/geo-rewrite.bash" >> ~/.bashrc
+source ~/.bashrc
+```
+
+### Zsh
+
+```bash
+# 临时生效
+fpath=($(pwd)/completions $fpath) && compinit
+
+# 持久化（需在 ~/.zshrc 中 compinit 之前添加）
+echo 'fpath=('$(pwd)'/completions $fpath)' >> ~/.zshrc
+# 确保 ~/.zshrc 中包含 autoload -Uz compinit && compinit
+```
+
+安装后输入 `geo-rewrite --` 再按 Tab 即可看到完整参数补全。
+
+---
+
+## 多语言提示词
+
+除中文版外，GEO Skills 提供完整的多语言提示词模板，可直接复制使用：
+
+| 语言 | 文件 | 适用平台 |
+|------|------|---------|
+| 中文 | [`geo-rewrite-prompt.md`](geo-rewrite-prompt.md) | 知乎 / 微信公众号 / 百家号 / 小红书 |
+| English | [`geo-rewrite-prompt-en.md`](geo-rewrite-prompt-en.md) | ChatGPT Search / Perplexity / Quora / Reddit |
+| 日本語 | [`prompts/geo-rewrite-prompt-ja.md`](prompts/geo-rewrite-prompt-ja.md) | Yahoo!知恵袋 / Note / Google Discover |
+| 한국어 | [`prompts/geo-rewrite-prompt-ko.md`](prompts/geo-rewrite-prompt-ko.md) | 지식인 / Brunch / Tistory / Instagram |
+
+每种语言均包含完整的 System Prompt、五维规则、平台适配表、改写示例和评分卡。

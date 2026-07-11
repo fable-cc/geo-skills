@@ -1,0 +1,52 @@
+site_name: GEO Skills
+site_description: AI 搜索引擎优化内容武器库 — 让每一篇文章都被 AI 搜索引擎看见
+repo_url: https://github.com/fable-cc/geo-skills
+repo_name: fable-cc/geo-skills
+
+theme:
+  name: material
+  language: zh
+  palette:
+    scheme: slate
+    primary: indigo
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - search.highlight
+    - search.suggest
+
+nav:
+  - 首页: index.md
+  - 快速开始: quickstart.md
+  - 脚本参考:
+    - geo-rewrite: scripts/geo-rewrite.md
+    - geo-audit: scripts/geo-audit.md
+    - geo-expand: scripts/geo-expand.md
+    - geo-flow: scripts/geo-flow.md
+    - geo-tracker: scripts/geo-tracker.md
+    - geo-watch: scripts/geo-watch.md
+    - geo-cost: scripts/geo-cost.md
+    - geo-bench: scripts/geo-bench.md
+    - visualizer: scripts/visualizer.md
+    - api-server: scripts/api-server.md
+    - geo-notify: scripts/geo-notify.md
+  - 提示词:
+    - 中文版: prompts/cn.md
+    - 英文版: prompts/en.md
+    - 日文版: prompts/ja.md
+    - 韩文版: prompts/ko.md
+  - 方法论: methodology.md
+  - 竞品分析: competitor-analysis.md
+  - 更新日志: changelog.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
