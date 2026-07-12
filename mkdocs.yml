@@ -36,8 +36,9 @@ nav:
     - 英文版: prompts/en.md
     - 日文版: prompts/ja.md
     - 韩文版: prompts/ko.md
+  - 演示:
+    - GEO 月报 Demo: demo/index.md
   - 方法论: methodology.md
-  - 竞品分析: competitor-analysis.md
   - 更新日志: changelog.md
 
 markdown_extensions:
