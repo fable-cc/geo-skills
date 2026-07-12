@@ -16,3 +16,13 @@ jobs:
       - run: pip install flake8
       - run: flake8 *.py tests/*.py --max-line-length=120 --ignore=E501,W503
       - run: python3 -c "import ast; [ast.parse(open(f).read()) for f in ['geo_rewrite.py','geo_content_audit.py','geo_keyword_expander.py','geo_flow.py','api_server.py','visualizer.py']]; print('All syntax OK')"
+
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run pre-commit
+        uses: pre-commit/action@v3.0.1

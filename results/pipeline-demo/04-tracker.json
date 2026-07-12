@@ -1,0 +1,15 @@
+{
+  "article": "健康饮食指南（GEO Skills 改写版）",
+  "total_score": 53,
+  "max_score": 70,
+  "timestamp": "2026-07-12T10:30:00",
+  "dimensions": {
+    "keyword_coverage": 8,
+    "structure": 9,
+    "readability": 8,
+    "originality": 7,
+    "authority": 9,
+    "eeat": 12
+  },
+  "pipeline": "mock-demo"
+}

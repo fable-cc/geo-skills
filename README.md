@@ -13,9 +13,13 @@ AIGC:
 
 > 让每一篇文章都被 AI 搜索引擎看见
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
-[![CI](https://github.com/fable-cc/geo-skills/actions/workflows/test.yml/badge.svg)](https://github.com/fable-cc/geo-skills/actions/workflows/test.yml)
+[![CI](https://github.com/fable-cc/geo-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/fable-cc/geo-skills/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Version](https://img.shields.io/badge/version-1.0.0-orange)](https://github.com/fable-cc/geo-skills/releases)
+[![Coverage](https://img.shields.io/badge/coverage-42%25-orange)](https://github.com/fable-cc/geo-skills)
+[![Mypy](https://img.shields.io/badge/mypy-passing-brightgreen)](https://github.com/fable-cc/geo-skills)
+📖 **文档**: [https://fable-cc.github.io/geo-skills](https://fable-cc.github.io/geo-skills)
 
 ## 这是什么
 
